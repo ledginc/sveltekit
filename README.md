@@ -1,1 +1,1 @@
-# sveltekit
+# sveltekitte
