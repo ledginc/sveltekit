@@ -13,8 +13,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    #if: contains(github.event.head_commit.message, 'web')
-    #test 4
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -36,13 +35,13 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GHCR_PAT }}
 
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v3
         with:
           context: .
-          platforms: linux/amd64 #, linux/arm64 <-- Add for ARM support
+          platforms: linux/amd64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
