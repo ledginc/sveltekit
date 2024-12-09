@@ -49,7 +49,6 @@ jobs:
           build-args: |
             PUBLIC_HELLO=world
 
-      Uncomment and replace with your server
       - name: Deploy on CapRover
        uses: caprover/deploy-from-github@v1.1.2
        with:
