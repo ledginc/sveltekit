@@ -50,9 +50,9 @@ jobs:
             PUBLIC_HELLO=world
 
       - name: Deploy on CapRover
-       uses: caprover/deploy-from-github@v1.1.2
-       with:
-         server: https://dev.diongilbert.com
-         app: 'sveltekit'
-         token: '${{ secrets.APP_TOKEN }}'
-         image: 'ghcr.io/ledginc/sveltekit:main'
+        uses: caprover/deploy-from-github@v1.1.2
+        with:
+          server: https://dev.diongilbert.com
+          app: 'sveltekit'
+          token: '${{ secrets.APP_TOKEN }}'
+          image: 'ghcr.io/ledginc/sveltekit:main'
