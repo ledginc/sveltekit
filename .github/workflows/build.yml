@@ -58,4 +58,4 @@ jobs:
           server: https://dev.diongilbert.com
           app: 'sveltekit'
           token: '${{ secrets.APP_TOKEN }}'
-          image: 'ghcr.io/ledginc/sveltekit:latest'
+          image: 'ghcr.io/ledginc/sveltekit:main'
