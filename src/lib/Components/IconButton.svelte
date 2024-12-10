@@ -2,39 +2,29 @@
   import { onMount } from "svelte";
   import { getSvgByName } from "$lib/Icons";
 
-    let { icon, width, height, children, outline } = $props();
+    let { icon, width, height} = $props();
     let svg: string | undefined = $state();
 
     onMount(() => {
-        svg = getSvgByName(icon, outline)
+        svg = getSvgByName(icon, true)
     })
 </script>
 
 <!-- svelte-ignore a11y_consider_explicit_label -->
-<div class="flex items-center justify-evenly relative rounded mt-1 mb-1" style={`width: ${width}; height: ${height}`}>
+<div class="flex items-center justify-evenly relative rounded" style={`width: ${width}; height: ${height}`}>
     <div class="icon">
         {@html svg}
-    </div>
-    <div class="text">
-        {@render children?.()}
     </div>
     <button></button>
 </div>
 
 <style>
     .icon {
-      width: 40px;
+      width: 100%;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    .text {
-      width: 66.67%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
     }
     button {
       width: 100%;
