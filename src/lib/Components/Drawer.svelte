@@ -167,7 +167,7 @@
     background-color: hsl(0, 0%, 96%);
   }
   .drawer {
-    background-color: hsl(0, 0%, 99%);
-    border-right: 1px solid hsl(0, 0%, 90%);
+    background-color: hsl(0, 0%, 98%);
+    border-right: 1px solid hsl(0, 0%, 97%);
   }
 </style>

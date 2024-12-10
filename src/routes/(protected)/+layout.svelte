@@ -18,6 +18,7 @@
 		height: 100dvh;
 		width: 100dvw;
 		position: relative;
+		background-color: hsl(0, 0%, 99%);
 	}
 	.slot {
 		flex: 1;
