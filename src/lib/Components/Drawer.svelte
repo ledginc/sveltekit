@@ -147,7 +147,7 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   button:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: hsla(0, 0%, 80%, 0.25);
   }
   .icon {
     width: 40px;
@@ -164,7 +164,7 @@
     justify-content: flex-start;
   }
   .active {
-    background-color: hsl(0, 0%, 96%);
+    background-color: hsl(0, 0%, 85%);
   }
   .drawer {
     background-color: hsl(0, 0%, 98%);

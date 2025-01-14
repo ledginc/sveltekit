@@ -1,6 +1,7 @@
 <script lang="ts">
-    import Button from "$lib/Components/Button.svelte";
+  import Input from "$lib/Components/Builder/Input.svelte";
+  import Button from "$lib/Components/Button.svelte";
 
 </script>
 
-<div>asfdasfd</div>
+<Input name="Adresse" type="penis" immutable=true />
