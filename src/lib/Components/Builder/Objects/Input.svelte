@@ -1,22 +1,6 @@
 <script lang="ts">
 
-  interface InputOptions {
-    label: string;
-    value: string;
-  }
-
-  interface InputProps {
-    name: string;
-    type: "short_text" | "long_text" | "toggle" | "combobox" | "range" | "radio" | "checkbox";
-    subType: "default" | "money" | "address" | "email" | "phone" | "date" | "time" | "datetime" | "number" | "percentage" | "color" | "image";
-    description: string;
-    mutable: boolean;
-    defaultValue: string;
-    required: boolean;
-    options: InputOptions[] | undefined;
-  }
-
-  let { name, type, description, mutable, defaultValue, required, options }: InputProps = $props();
+  let { name, type, description, mutable, defaultValue, required, options }: ProcessInputProperties = $props();
   let value = $state(defaultValue || '');
 
   let formattedClass: string;
