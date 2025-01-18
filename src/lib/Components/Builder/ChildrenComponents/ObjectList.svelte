@@ -2,8 +2,6 @@
   import { BuilderObjects, type BuilderCardObject } from '$lib/Constants/BuilderCardObjects';
   import { onMount } from 'svelte';
 
-  let { currentSection }: { currentSection: number } = $props();
-
   let inputs = BuilderObjects.filter((object) => object.category === 'input');
   let conditions = BuilderObjects.filter((object) => object.category === 'condition');
 
@@ -24,7 +22,7 @@
 </script>
 
 {#snippet card(object: BuilderCardObject)}
-  <div class="bg-base-100 shadow-md w-5/12 h-12 p-1 cursor-grab rounded-md" draggable="true" data-draggable="true" data-objecttype={object.category} data-type={object.type}>
+  <div class="bg-base-100 shadow-md w-5/12 h-12 p-1 cursor-grab rounded-md min-w-72" draggable="true" data-draggable="true" data-objecttype={object.category} data-type={object.type}>
       <div class="flex flex-start gap-2 w-full items-center h-full ">
         {@html object.icon}
         <h1 class="text-lg font-semibold">
