@@ -1,7 +1,4 @@
 <script>
-  import Agenda from "$lib/Components/Agenda.svelte";
-
-
   let today = new Date();
   let currentMonth = today.getMonth();
   let currentYear = today.getFullYear();
@@ -15,7 +12,6 @@
 
   </div>
   <div class="agenda">
-    <Agenda type="weekly" />
   </div>
 </div>
 

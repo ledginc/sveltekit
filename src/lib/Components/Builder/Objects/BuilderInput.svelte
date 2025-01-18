@@ -3,7 +3,7 @@
   let { name, type, description, mutable, defaultValue, required, options }: ProcessInputProperties = $props();
   let value = $state(defaultValue || '');
 
-  let formattedClass: string;
+  let formattedClass: string = $state("input");
 
   switch (type) {
     case "short_text":
