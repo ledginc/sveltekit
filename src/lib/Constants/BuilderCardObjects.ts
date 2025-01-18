@@ -1,4 +1,4 @@
-export const BuilderObjects: BuilderObject[] = [
+export const BuilderObjects: BuilderCardObject[] = [
     {
       category: "input",
       type: 'short_text',
@@ -73,7 +73,7 @@ export const BuilderObjects: BuilderObject[] = [
     }
   ]
 
-export interface BuilderObject {
+export interface BuilderCardObject {
   category: "input" | "math" | "condition" | "action" | "logic" | "integration" | "table" | "static";
   type: string;
   icon: string;

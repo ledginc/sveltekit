@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { createProcess } from "./index.svelte";
+  import { createProcess } from "../index.svelte";
 
   let processName = "";
   let dialog: HTMLDialogElement;

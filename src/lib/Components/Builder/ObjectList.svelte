@@ -1,14 +1,30 @@
 <script lang="ts">
-  import { BuilderObjects, type BuilderObject } from '$lib/Constants/BuilderObjects';
+  import { BuilderObjects, type BuilderCardObject } from '$lib/Constants/BuilderCardObjects';
+  import { onMount } from 'svelte';
 
   let { currentSection }: { currentSection: number } = $props();
 
   let inputs = BuilderObjects.filter((object) => object.category === 'input');
   let conditions = BuilderObjects.filter((object) => object.category === 'condition');
+
+  onMount(() => {
+    const draggableElements = document.querySelectorAll('[data-draggable="true"]');
+
+    draggableElements.forEach((element) => {
+      const divElement = element as HTMLDivElement;
+      divElement.addEventListener('dragstart', (e: DragEvent) => {
+        if (e.dataTransfer) {
+          const data = divElement.dataset.objecttype + "/" + divElement.dataset.type || "";
+          e.dataTransfer.setData('text/plain', data);
+        }
+      });
+    });
+  });
+
 </script>
 
-{#snippet card(object: BuilderObject)}
-  <div class="bg-base-100 shadow-md w-5/12 h-12 p-1 cursor-grab rounded-md" draggable="true">
+{#snippet card(object: BuilderCardObject)}
+  <div class="bg-base-100 shadow-md w-5/12 h-12 p-1 cursor-grab rounded-md" draggable="true" data-draggable="true" data-objecttype={object.category} data-type={object.type}>
       <div class="flex flex-start gap-2 w-full items-center h-full ">
         {@html object.icon}
         <h1 class="text-lg font-semibold">

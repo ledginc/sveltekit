@@ -7,7 +7,7 @@ interface Process {
 interface ProcessSection {
   id: number,
   order: number,
-  title: string,
+  name: string,
   objects: ProcessObject[]
 }
 
