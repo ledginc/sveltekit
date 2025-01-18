@@ -1,47 +1,36 @@
 <script lang="ts">
-  import Input from "./Input.svelte";
+  import ObjectList from "./ObjectList.svelte";
+  import { process } from "$lib/Constants/fakeProtech";
+  import Input from "./Objects/Input.svelte";
 
-  let sections: any[] = [
-    {
-      id: "s1",
-      objects: [
-        {
-          id: "i1",
-          objectType: "Input",
-          name: "Adresse",
-          type: "longText",
-          immutable: true,
-          defaultValue: "",
-          options: "",
-          required: "",
-          description: ""
-        },
-        {
-          id: "i2",
-          objectType: "Math",
-          name: "Adresse",
-          type: "longText",
-          immutable: true,
-          defaultValue: "",
-          options: "",
-          required: "",
-          description: ""
-        }
-      ]
-    }
-  ];
+  export const currentSection = $state(0);
+
+  const sections = process.sections;
 </script>
 
-{#each sections as section}
-  <h1>{section.id}</h1>
-  <div>
-    {#each section.objects as object}
-      {#if object.objectType === "Input"}
-        <Input name={object.name} type={object.type} immutable={object.immutable} defaultValue={object.defaultValue} options={object.options} required={object.required} description={object.description} />
-      {/if}
-      {#if object.objectType === "Math"}
-        <Math name={object.name} type={object.type} immutable={object.immutable} defaultValue={object.defaultValue} options={object.options} required={object.required} description={object.description} />
-      {/if}
+<div class="flex">
+  <ObjectList />
+  <div class="">
+    {#each sections as section}
+      <h1>{section.id}</h1>
+      <div>
+        {#each section.objects as object}
+          {#if object.object_type === "input"}
+            <Input
+              name={object.properties.name}
+              type={object.properties.type}
+              subType={object.properties.sub_type}
+              mutable={object.properties.mutable}
+              defaultValue={object.properties.default_value}
+              options={object.properties.options}
+              required={object.properties.required}
+              description={object.properties.description}
+            />
+          {/if}
+        {/each}
+      </div>
     {/each}
   </div>
-{/each}
+  
+</div>
+
