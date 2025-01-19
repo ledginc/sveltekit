@@ -13,11 +13,10 @@ export function createProcess(name: string) {
       objects: [],
     }],
   });
-  console.log(get(process))
 }
 
 
-export async function addObjectToProcess(category: string, type: string, currentsectionId: number) {
+export async function addObjectToProcess(category: string, type: string, sectionId: number) {
   const processValue = get(process);
   if (!processValue) return;
 
@@ -34,8 +33,7 @@ export async function addObjectToProcess(category: string, type: string, current
     },
   };
 
-  processValue.sections.find((section) => section.id === currentsectionId)?.objects.push(newObject);
+  processValue.sections.find((section) => section.id === sectionId)?.objects.push(newObject);
 
   process.set(processValue);
-  console.log(get(process));
 }

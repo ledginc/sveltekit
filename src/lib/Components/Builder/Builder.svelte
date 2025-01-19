@@ -3,18 +3,25 @@
   import { addObjectToProcess, process } from "./index.svelte";
   import ObjectList from "./ChildrenComponents/ObjectList.svelte";
   import Input from "./Objects/BuilderInput.svelte";
+  import Condition from "./Objects/BuilderCondition.svelte";
+  import Action from "./Objects/BuilderAction.svelte";
+  import Integration from "./Objects/BuilderIntegration.svelte";
+  import Logic from "./Objects/BuilderLogic.svelte";
+  import Math from "./Objects/BuilderMath.svelte";
+  import Static from "./Objects/BuilderStatic.svelte";
+  import Table from "./Objects/BuilderTable.svelte";
   import DropZone from "./ChildrenComponents/DropZone.svelte";
   import HeaderBuilder from "./ChildrenComponents/HeaderBuilder.svelte";
 
   let currentProcess = $state($process);
-  let currentSectionId = $state(0);
+  let numberOfSections = $state($process?.sections.length || 0);
 
   process.subscribe((value) => {
     currentProcess = value;
-    if (value && value.sections.length > 0) {
+    if (value && value.sections.length > numberOfSections) {
       setTimeout(() => {
-        const dropZone = document.querySelector(`[data-containertype="dropzone"][data-sectionid="${currentSectionId}"]`);
-        if (dropZone) {
+        const dropZones = document.querySelectorAll(`[data-containertype="dropzone"]`);
+        dropZones.forEach((dropZone) => {
           dropZone.addEventListener("dragover", (e) => {
             e.preventDefault();
             const event = e as DragEvent;
@@ -29,15 +36,15 @@
               const data = event.dataTransfer.getData('text/plain');
               const category = data.split("/")[0];
               const type = data.split("/")[1];
-              addObjectToProcess(category, type, currentSectionId);
+              const sectionId = dropZone.getAttribute("data-sectionid");
+              addObjectToProcess(category, type, Number(sectionId));
             }
           });
-        } else {
-          console.error("Drop zone not found");
-        }
-      }, 1500);
-  }
-});
+        });
+        numberOfSections = value?.sections.length || 0;
+      }, 1000);
+    }
+  });
 
 </script>
 
@@ -53,7 +60,23 @@
           <div class="h-auto w-4/5 bg-base-100 box-border p-3 rounded-lg items-center flex flex-col gap-3" data-containertype="section" data-sectionid={section.id}>
             <h3 class="text-lg">{section.name}</h3>
             {#each section.objects as object}
-              <Input name={object.properties.name} type={object.properties.type} description={object.properties.description} mutable={object.properties.mutable} defaultValue={object.properties.defaultValue} required={object.properties.required} options={object.properties.options} />
+              {#if object.type === "input"}
+                <Input name={object.properties.name} type={object.properties.type} description={object.properties.description} mutable={object.properties.mutable} defaultValue={object.properties.defaultValue} required={object.properties.required} options={object.properties.options} />
+              {:else if object.type === "condition"}
+                <Condition />
+              {:else if object.type === "math"}
+                <Math />
+              {:else if object.type === "logic"}
+                <Logic />
+              {:else if object.type === "integration"}
+                <Integration />
+              {:else if object.type === "table"}
+                <Table />
+              {:else if object.type === "static"}
+                <Static />
+              {:else if object.type === "action"}
+                <Action />
+              {/if}
             {/each}
             <DropZone section={section} />
           </div>
