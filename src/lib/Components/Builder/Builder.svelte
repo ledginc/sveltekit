@@ -55,7 +55,7 @@
   <ObjectList />
   <div class="w-full h-full flex-col box-border">
     <HeaderBuilder currentProcess={currentProcess} />
-      <div class="box-border flex flex-col items-center bg-base-200 p-4 w-full math">
+      <div class="box-border flex flex-col items-center bg-base-200 p-4 w-full math gap-10 overflow-y-auto">
         {#each currentProcess.sections as section}
           <div class="h-auto w-4/5 bg-base-100 box-border p-3 rounded-lg items-center flex flex-col gap-3" data-containertype="section" data-sectionid={section.id}>
             <h3 class="text-lg">{section.name}</h3>

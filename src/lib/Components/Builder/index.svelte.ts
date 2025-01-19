@@ -15,6 +15,21 @@ export function createProcess(name: string) {
   });
 }
 
+export async function addSectionToProcess() {
+  const processValue = get(process);
+  if (!processValue) return;
+
+  const newSection: ProcessSection = {
+    id: 0,
+    order: processValue.sections.length + 1,
+    name: `Section ${processValue.sections.length + 1}`,
+    objects: [],
+  };
+
+  processValue.sections.push(newSection);
+
+  process.set(processValue);
+}
 
 export async function addObjectToProcess(category: string, type: string, sectionId: number) {
   const processValue = get(process);

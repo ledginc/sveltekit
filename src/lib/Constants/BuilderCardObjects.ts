@@ -1,4 +1,5 @@
-export const BuilderObjects: BuilderCardObject[] = [
+export const BuilderObjects: BuilderObjectsList = {
+  input: [
     {
       category: "input",
       type: 'short_text',
@@ -6,6 +7,7 @@ export const BuilderObjects: BuilderCardObject[] = [
       labelEN: `Short Text`,
       labelFR: `Texte court`,
       new: false,
+      disabled: true,
       description: `Short text input field`,
     },
     {
@@ -15,6 +17,7 @@ export const BuilderObjects: BuilderCardObject[] = [
       labelEN: `Long Text`,
       labelFR: "Texte long",
       new: false,
+      disabled: true,
       description: `Long text input field`,
     },
     {
@@ -24,6 +27,7 @@ export const BuilderObjects: BuilderCardObject[] = [
       labelEN: `ON or OFF`,
       labelFR: "Activé ou désactivé",
       new: false,
+      disabled: true,
       description: `Toggle input field`,
     },
     {
@@ -33,6 +37,7 @@ export const BuilderObjects: BuilderCardObject[] = [
       labelEN: `Options selection`,
       labelFR: "Sélection d'options",
       new: false,
+      disabled: true,
       description: `Options selection input field`,
     },
     {
@@ -42,6 +47,7 @@ export const BuilderObjects: BuilderCardObject[] = [
       labelEN: "Slider",
       labelFR: "Curseur",
       new: false,
+      disabled: true,
       description: `Slider input field`,
     },
     {
@@ -51,6 +57,7 @@ export const BuilderObjects: BuilderCardObject[] = [
       labelEN: "Choice",
       labelFR: "Choix",
       new: false,
+      disabled: true,
       description: `Choice input field`,
     },
     {
@@ -60,6 +67,7 @@ export const BuilderObjects: BuilderCardObject[] = [
       labelEN: "Checkboxes",
       labelFR: "Cases à cocher",
       new: false,
+      disabled: true,
       description: `Checkboxes input field`,
     },
     {
@@ -69,9 +77,116 @@ export const BuilderObjects: BuilderCardObject[] = [
       labelEN: "Constant",
       labelFR: "Constante",
       new: false,
+      disabled: true,
       description: `Constant input field`,
     }
-  ]
+  ],
+  math: [
+    {
+      category: "math",
+      type: "formula",
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg"> <path d="M12.1873 4.1404C11.2229 3.41705 9.84236 4.0694 9.78883 5.2738L9.71211 6.99991H12C12.5523 6.99991 13 7.44762 13 7.99991C13 8.55219 12.5523 8.99991 12 8.99991H9.62322L9.22988 17.85C9.0996 20.7814 5.63681 22.2609 3.42857 20.3287L3.34151 20.2525C2.92587 19.8888 2.88375 19.257 3.24743 18.8414C3.61112 18.4258 4.24288 18.3836 4.65852 18.7473L4.74558 18.8235C5.69197 19.6516 7.17602 19.0175 7.23186 17.7612L7.62125 8.99991H6C5.44772 8.99991 5 8.55219 5 7.99991C5 7.44762 5.44772 6.99991 6 6.99991H7.71014L7.7908 5.185C7.9157 2.37474 11.1369 0.852583 13.3873 2.5404L13.6 2.6999C14.0418 3.03127 14.1314 3.65807 13.8 4.0999C13.4686 4.54173 12.8418 4.63127 12.4 4.2999L12.1873 4.1404ZM13.082 13.0461C13.3348 12.907 13.6525 13.0102 13.7754 13.2713L14.5879 14.9978L11.2928 18.2928C10.9023 18.6834 10.9023 19.3165 11.2928 19.707C11.6834 20.0976 12.3165 20.0976 12.707 19.707L15.493 16.9211L16.2729 18.5785C16.9676 20.0548 18.8673 20.4807 20.1259 19.4424L20.6363 19.0213C21.0623 18.6698 21.1228 18.0396 20.7713 17.6136C20.4198 17.1875 19.7896 17.1271 19.3636 17.4786L18.8531 17.8997C18.6014 18.1073 18.2215 18.0221 18.0825 17.7269L16.996 15.4181L19.707 12.707C20.0976 12.3165 20.0976 11.6834 19.707 11.2928C19.3165 10.9023 18.6834 10.9023 18.2928 11.2928L16.0909 13.4947L15.585 12.4197C14.9708 11.1143 13.3822 10.5984 12.1182 11.2936L11.518 11.6237C11.0341 11.8899 10.8576 12.4979 11.1237 12.9819C11.3899 13.4658 11.998 13.6423 12.4819 13.3761L13.082 13.0461Z" fill="#000000"/> </svg>`,
+      labelEN: "Formula",
+      labelFR: "Formule",
+      new: false,
+      disabled: true,
+      description: `Math formula input field`,
+    }
+  ],
+  condition: [
+    {
+      category: "condition",
+      type: "comparison",
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg"> <path d="M9 5.5C9 7.26324 7.69615 8.72194 6 8.96456V15C6 16.6569 7.34315 18 9 18H11.6893L10.7197 17.0303C10.4268 16.7374 10.4268 16.2626 10.7197 15.9697C11.0126 15.6768 11.4874 15.6768 11.7803 15.9697L14.0303 18.2197C14.3232 18.5126 14.3232 18.9874 14.0303 19.2803L11.7803 21.5303C11.4874 21.8232 11.0126 21.8232 10.7197 21.5303C10.4268 21.2374 10.4268 20.7626 10.7197 20.4697L11.6893 19.5H9C6.51472 19.5 4.5 17.4853 4.5 15V8.875L4.50026 8.85514C3.05438 8.42495 2 7.08561 2 5.5C2 3.567 3.567 2 5.5 2C7.433 2 9 3.567 9 5.5ZM22 18.5C22 20.433 20.433 22 18.5 22C16.567 22 15 20.433 15 18.5C15 16.7368 16.3039 15.2781 18 15.0354V9C18 7.34315 16.6569 6 15 6H13.0607L14.0303 6.96967C14.3232 7.26256 14.3232 7.73744 14.0303 8.03033C13.7374 8.32322 13.2626 8.32322 12.9697 8.03033L10.7197 5.78033C10.4268 5.48744 10.4268 5.01256 10.7197 4.71967L12.9697 2.46967C13.2626 2.17678 13.7374 2.17678 14.0303 2.46967C14.3232 2.76256 14.3232 3.23744 14.0303 3.53033L13.0607 4.5H15C17.4853 4.5 19.5 6.51472 19.5 9V15.125L19.4997 15.1449C20.9456 15.5751 22 16.9144 22 18.5Z" fill="#000000"/> </svg>`,
+      labelEN: "Comparison",
+      labelFR: "Comparaison",
+      new: false,
+      disabled: true,
+      description: `Comparison condition input field`,
+    }
+  ],
+  action: [
+    {
+      category: "action",
+      type: "set",
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg"> <path d="M12 2V8C12 9.10457 12.8954 10 14 10H18.9209C18.324 10.2196 17.7756 10.5541 17.3621 10.9704L11.3114 17.0623C10.9598 17.4164 10.7086 17.8576 10.5836 18.3407L10.0588 20.3701C9.90491 20.9651 10.0168 21.5396 10.3007 22H5.5C4.67157 22 4 21.3284 4 20.5V3.5C4 2.67157 4.67157 2 5.5 2H12ZM13.5 2.5V8C13.5 8.27614 13.7239 8.5 14 8.5H19.5L13.5 2.5ZM12.1957 17.5719L18.0981 11.6695C18.9907 10.7768 20.4379 10.7768 21.3305 11.6695C22.2231 12.5621 22.2231 14.0093 21.3305 14.9019L15.4281 20.8043C15.084 21.1485 14.6528 21.3926 14.1806 21.5106L12.3499 21.9683C11.5538 22.1674 10.8326 21.4462 11.0317 20.6501L11.4894 18.8194C11.6074 18.3472 11.8515 17.916 12.1957 17.5719Z" fill="#000000"/> </svg>`,
+      labelEN: "Modify",
+      labelFR: "Modifier",
+      new: false,
+      disabled: true,
+      description: `Change a data entry action input field`,
+    }
+  ],
+  logic: [
+    {
+      category: "logic",
+      type: "if_else",
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg"> <path d="M11.7628 2.03849C11.9168 1.98717 12.0832 1.98717 12.2372 2.03849L15.9872 3.28849C16.2934 3.39057 16.5 3.67718 16.5 4V9C16.5 9.32282 16.2934 9.60943 15.9872 9.71151L12.75 10.7906V13H14.5C15.7426 13 16.75 14.0074 16.75 15.25V16.0945C18.0439 16.4275 19 17.6021 19 19C19 20.6569 17.6569 22 16 22C14.3431 22 13 20.6569 13 19C13 17.6021 13.9561 16.4275 15.25 16.0945V15.25C15.25 14.8358 14.9142 14.5 14.5 14.5H9.5C9.08579 14.5 8.75 14.8358 8.75 15.25V16.0945C10.0439 16.4275 11 17.6021 11 19C11 20.6569 9.65685 22 8 22C6.34315 22 5 20.6569 5 19C5 17.6021 5.95608 16.4275 7.25 16.0945V15.25C7.25 14.0074 8.25736 13 9.5 13H11.25V10.7906L8.01283 9.71151C7.70657 9.60943 7.5 9.32282 7.5 9V4C7.5 3.67718 7.70657 3.39057 8.01283 3.28849L11.7628 2.03849ZM9.78849 5.51283C9.6575 5.90579 9.86987 6.33053 10.2628 6.46151L11.25 6.79057V7.75C11.25 8.16421 11.5858 8.5 12 8.5C12.4142 8.5 12.75 8.16421 12.75 7.75V6.79057L13.7372 6.46151C14.1301 6.33053 14.3425 5.90579 14.2115 5.51283C14.0805 5.11987 13.6558 4.9075 13.2628 5.03849L12 5.45943L10.7372 5.03849C10.3442 4.9075 9.91947 5.11987 9.78849 5.51283Z" fill="#000000"/> </svg>`,
+      labelEN: "If Else",
+      labelFR: "Si Sinon",
+      new: false,
+      disabled: true,
+      description: `If Else logic input field`,
+    }
+  ],
+  integration: [
+    {
+      category: "integration",
+      type: "gmap",
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg"> <path d="M8.50002 4.35798V16.823L4.18035 19.8614C3.71263 20.1902 3.07889 19.8947 3.00595 19.3523L2.99902 19.2478V8.61531C2.99902 8.40599 3.08638 8.20791 3.23714 8.06714L3.3177 8.00175L8.50002 4.35798ZM20.9944 4.6478L21.0014 4.75229V15.3848C21.0014 15.5941 20.914 15.7922 20.7632 15.933L20.6827 15.9984L15.5 19.64V7.17398L19.82 4.13872C20.2878 3.80993 20.9215 4.10546 20.9944 4.6478ZM10 4.35898L14 7.17098V19.638L10 16.824V4.35898Z" fill="#000000"/> </svg>`,
+      labelEN: "Google Maps",
+      labelFR: "Google Maps",
+      new: false,
+      disabled: true,
+      description: `Google Maps integration input field`,
+    }
+  ],
+  table: [
+    {
+      category: "table",
+      type: "table",
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg"> <path d="M9.5 21H14.5V16H9.5L9.5 21ZM16 21H17.75C19.5449 21 21 19.5449 21 17.75V16H16V21ZM21 14.5V9.5H16L16 14.5H21ZM21 8V6.25C21 4.45507 19.5449 3 17.75 3H16V8H21ZM14.5 3H9.5L9.5 8H14.5V3ZM8 3H6.25C4.45507 3 3 4.45507 3 6.25V8H8L8 3ZM3 9.5V14.5H8V9.5H3ZM3 16V17.75C3 19.5449 4.45507 21 6.25 21H8L8 16H3ZM14.5 9.5L14.5 14.5H9.5V9.5H14.5Z" fill="#000000"/> </svg>`,
+      labelEN: "Table",
+      labelFR: "Tableau",
+      new: false,
+      disabled: true,
+      description: `Table input field`,
+    }
+  ],
+  static: [
+    {
+      category: "static",
+      type: "text",
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg"> <path d="M2 6.75C2 5.23122 3.23122 4 4.75 4H19.25C20.7688 4 22 5.23122 22 6.75V17.25C22 18.7688 20.7688 20 19.25 20H4.75C3.23122 20 2 18.7688 2 17.25V6.75ZM6.75 8C6.33579 8 6 8.33579 6 8.75C6 9.16421 6.33579 9.5 6.75 9.5H11.25C11.6642 9.5 12 9.16421 12 8.75C12 8.33579 11.6642 8 11.25 8H6.75ZM6.75 11C6.33579 11 6 11.3358 6 11.75C6 12.1642 6.33579 12.5 6.75 12.5H15.25C15.6642 12.5 16 12.1642 16 11.75C16 11.3358 15.6642 11 15.25 11H6.75ZM6 14.75C6 15.1642 6.33579 15.5 6.75 15.5H13.25C13.6642 15.5 14 15.1642 14 14.75C14 14.3358 13.6642 14 13.25 14H6.75C6.33579 14 6 14.3358 6 14.75Z" fill="#000000"/> </svg>`,
+      labelEN: `Text`,
+      labelFR: `Texte`,
+      new: false,
+      disabled: true,
+      description: `Short text input field`,
+    },
+    {
+      category: "static",
+      type: "image",
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg"> <path d="M11.5582 13.6469L11.4746 13.7179L4.54692 20.5186C5.04216 20.8239 5.62551 21 6.25 21H17.75C18.3745 21 18.9578 20.8239 19.4531 20.5186L12.5254 13.7179L12.432 13.6399C12.1705 13.4552 11.8174 13.4576 11.5582 13.6469ZM21 6.25C21 4.45507 19.5449 3 17.75 3H6.25C4.45507 3 3 4.45507 3 6.25V17.75C3 18.3771 3.17758 18.9626 3.4852 19.4592L10.4238 12.6475L10.5592 12.5248C11.3941 11.8273 12.615 11.8293 13.4477 12.5306L13.5762 12.6475L20.5148 19.4592C20.8224 18.9626 21 18.3771 21 17.75V6.25ZM15.25 10.75C14.1454 10.75 13.25 9.85457 13.25 8.75C13.25 7.64543 14.1454 6.75 15.25 6.75C16.3546 6.75 17.25 7.64543 17.25 8.75C17.25 9.85457 16.3546 10.75 15.25 10.75Z" fill="#000000"/> </svg>`,
+      labelEN: `Image`,
+      labelFR: `Image`,
+      new: false,
+      disabled: true,
+      description: `Image input field`,
+    },
+  ],
+}
+
+export interface BuilderObjectsList {
+  input: BuilderCardObject[];
+  math: BuilderCardObject[];
+  condition: BuilderCardObject[];
+  action: BuilderCardObject[];
+  logic: BuilderCardObject[];
+  integration: BuilderCardObject[];
+  table: BuilderCardObject[];
+  static: BuilderCardObject[];
+}
 
 export interface BuilderCardObject {
   category: "input" | "math" | "condition" | "action" | "logic" | "integration" | "table" | "static";
@@ -80,5 +195,6 @@ export interface BuilderCardObject {
   labelEN: string;
   labelFR: string;
   new: boolean;
+  disabled: boolean;
   description: string;
 }
