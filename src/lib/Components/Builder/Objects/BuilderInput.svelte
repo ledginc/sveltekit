@@ -45,7 +45,7 @@
       {/each}
     </select>
   {:else}
-    <input class={formattedClass} type={type} bind:value placeholder={name} />
+    <input class={formattedClass} type={type} placeholder={name} />
   {/if}
 </div>
 <style>

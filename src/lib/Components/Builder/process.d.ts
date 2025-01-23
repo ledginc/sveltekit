@@ -1,11 +1,11 @@
 interface Process {
-  id: number,
+  id: string,
   name: string,
   sections: ProcessSection[]
 }
 
 interface ProcessSection {
-  id: number,
+  id: string,
   order: number,
   name: string,
   objects: ProcessObject[]
@@ -22,7 +22,7 @@ type ProcessObject =
   | ProcessStaticObject;
 
 interface BaseProcessObject {
-  id: number;
+  id: string;
   type: string;
 }
 

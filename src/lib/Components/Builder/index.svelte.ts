@@ -2,12 +2,12 @@ import { get, writable } from 'svelte/store';
 
 export const process = writable<Process | null>(null);
 
-export function createProcess(name: string) {
+export async function createProcess(name: string) {
   process.set({
-    id: 1,
+    id: "p1",
     name: name,
     sections: [{
-      id: 0,
+      id: "s1",
       order: 1,
       name: 'Section 1',
       objects: [],
@@ -15,14 +15,14 @@ export function createProcess(name: string) {
   });
 }
 
-export async function addSectionToProcess() {
+export function addSectionToProcess() {
   const processValue = get(process);
   if (!processValue) return;
 
   const newSection: ProcessSection = {
-    id: 0,
-    order: processValue.sections.length + 1,
-    name: `Section ${processValue.sections.length + 1}`,
+    id: "s" + (Number(processValue.sections.length) + 1),
+    order: Number(processValue.sections.length) + 1,
+    name: "Section " + (Number(processValue.sections.length) + 1),
     objects: [],
   };
 
@@ -31,12 +31,16 @@ export async function addSectionToProcess() {
   process.set(processValue);
 }
 
-export async function addObjectToProcess(category: string, type: string, sectionId: number) {
+export function addObjectToProcess(category: string, type: string, sectionId: string) {
   const processValue = get(process);
   if (!processValue) return;
 
+  const totalNumberOfObjects: number = processValue.sections
+    .map((section) => section.objects.length)
+    .reduce((a, b) => a + b, 0);
+
   const newObject: ProcessInputObject = {
-    id: 420,
+    id: "o" + (totalNumberOfObjects + 1),
     type: "input",
     properties: {
       name: "",
@@ -49,6 +53,31 @@ export async function addObjectToProcess(category: string, type: string, section
   };
 
   processValue.sections.find((section) => section.id === sectionId)?.objects.push(newObject);
+
+  process.set(processValue);
+}
+
+export function updateProcess(newProcess: {name: string}) {
+  process.update((value) => {
+    if (!value) return value;
+
+    return {
+      ...value,
+      name: newProcess.name,
+    };
+  });
+  console.log(get(process));
+}
+
+export function updateSection(newSection: {id: string, name: string}) {
+  console.log(newSection);
+  const processValue = get(process);
+  if (!processValue) return;
+
+  const sectionIndex = processValue.sections.findIndex((section) => section.id === newSection.id);
+  if (sectionIndex === -1) return;
+
+  processValue.sections[sectionIndex].name = newSection.name;
 
   process.set(processValue);
 }
