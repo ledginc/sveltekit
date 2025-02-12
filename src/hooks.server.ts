@@ -17,5 +17,7 @@ export const handle: Handle = async ({ event, resolve }) => {
   //   }
   // }
 
+  console.log(event.url.hostname);
+
   return await resolve(event);
 };

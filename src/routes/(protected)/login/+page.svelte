@@ -1,6 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import type { PageData } from './$types';
+  import type { PageData } from '../../login/$types';
 
     let { data }: { data: PageData } = $props();
 
@@ -9,9 +9,9 @@
     
 
     function logIn() {
-      // email et password sont updatées en temps réel
+      // email et password sont updatés en temps réel
 
-      goto('');
+      goto('/');
     }
 
 
@@ -19,9 +19,9 @@
 
 <main class="w-dvw h-dvh flex justify-center items-center relative">
 
-  <div class="w-1/3 absolute flex flex-col items-center justify-center logo">
-    <img class="max-w-80" src="https://protech-portal.web.app/assets/protech-CaSvsdQL.webp" />
-    <p class="text-center">Propulsé par Planifix</p>
+  <div class="w-1/3 absolute flex flex-col items-center justify-center logo prose">
+    <img alt="Company logo" class="max-w-80 m-0" src="https://protech-portal.web.app/assets/protech-CaSvsdQL.webp" />
+    <h3 class="m-0">Propulsé par Planifix</h3>
   </div>
 
   <div class="w-1/3 h-1/6 flex flex-col justify-between rounded-lg border-slate-600 border-solid">
