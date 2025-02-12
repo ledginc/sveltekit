@@ -4,21 +4,6 @@
 
 <Builder />
 
-
-<!-- <Math />
-
-<Condition />
-
-<Information />
-
-<Table />
-
-<Action /> -->
-
-
-
-
-
 <style>
 
 </style>

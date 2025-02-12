@@ -1,33 +1,64 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-    import type { PageData } from './$types';
-
+  import { goto } from '$app/navigation';
+  import type { PageData } from './$types';
 
     let { data }: { data: PageData } = $props();
 
-    let websocketConnection: WebSocket | null = null;
+    let email = $state('');
+    let password = $state('');
+    
 
-    function sendMessage(message: string) {
-      const data = JSON.stringify({
-          data: {message: message},
-        });
-      if (websocketConnection) {
-        websocketConnection.send(data);
-      }
+    function logIn() {
+      // email et password sont updatées en temps réel
+
+      goto('');
     }
 
-    onMount(() => {
-      websocketConnection = new WebSocket('ws://192.99.38.163:4000/ws/penis');
-      if (websocketConnection) {
-        websocketConnection.addEventListener("open", (event: any) => {
-          console.log('WebSocket connection opened:', event);
-        });
-        websocketConnection.addEventListener("message", (event: any) => {
-          console.log("message : ", event.data)
-        })
-      }
-      
-    });
+
 </script>
 
-<button class="btn btn-primary" onclick={() => {sendMessage("kjhsdaf")}}>Login</button>
+<main class="w-dvw h-dvh flex justify-center items-center relative">
+
+  <div class="w-1/3 absolute flex flex-col items-center justify-center logo">
+    <img class="max-w-80" src="https://protech-portal.web.app/assets/protech-CaSvsdQL.webp" />
+    <p class="text-center">Propulsé par Planifix</p>
+  </div>
+
+  <div class="w-1/3 h-1/6 flex flex-col justify-between rounded-lg border-slate-600 border-solid">
+    <label class="input input-bordered flex items-center gap-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        class="h-4 w-4 opacity-70">
+        <path
+          d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+      </svg>
+      <input type="text" class="grow" placeholder="Courriel" bind:value={email} />
+    </label>
+    <label class="input input-bordered flex items-center gap-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        class="h-4 w-4 opacity-70">
+        <path
+          fill-rule="evenodd"
+          d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
+          clip-rule="evenodd" />
+      </svg>
+      <input type="password" class="grow" placeholder="Mot de passe"  bind:value={password} />
+    </label>
+    <button class="btn btn-primary" onclick={logIn}>Se connecter</button>
+  </div>
+</main>
+
+
+
+<style lang="postcss">
+  .logo {
+    top: 256px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+</style>

@@ -1,5 +1,5 @@
 {
-	"name": "bbind",
+	"name": "planifix",
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
@@ -24,6 +24,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
-		"@sveltejs/adapter-node": "^5.2.9"
+		"@sveltejs/adapter-node": "^5.2.9",
+		"uuid": "^11.0.5"
 	}
 }
