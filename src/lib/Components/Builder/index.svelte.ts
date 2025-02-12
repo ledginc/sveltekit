@@ -1,6 +1,7 @@
+import type { ProcessInputObjectScaffolding, ProcessScaffolding, ProcessSectionScaffolding } from '$lib/processScaffolding';
 import { get, writable } from 'svelte/store';
 
-export const process = writable<Process | null>(null);
+export const process = writable<ProcessScaffolding | null>(null);
 
 export async function createProcess(name: string) {
   process.set({
@@ -19,7 +20,7 @@ export function addSectionToProcess() {
   const processValue = get(process);
   if (!processValue) return;
 
-  const newSection: ProcessSection = {
+  const newSection: ProcessSectionScaffolding = {
     id: "s" + (Number(processValue.sections.length) + 1),
     order: Number(processValue.sections.length) + 1,
     name: "Section " + (Number(processValue.sections.length) + 1),
@@ -39,12 +40,11 @@ export function addObjectToProcess(category: string, type: string, sectionId: st
     .map((section) => section.objects.length)
     .reduce((a, b) => a + b, 0);
 
-  const newObject: ProcessInputObject = {
+  const newObject: ProcessInputObjectScaffolding = {
     id: "o" + (totalNumberOfObjects + 1),
     type: "input",
     properties: {
-      name: "",
-      type: type,
+      subtype: type,
       description: "",
       mutable: true,
       defaultValue: "",

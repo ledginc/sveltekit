@@ -1,13 +1,11 @@
-interface Process {
+export interface Process {
   id: string,
-  name: string,
   sections: ProcessSection[]
 }
 
 interface ProcessSection {
   id: string,
   order: number,
-  name: string,
   objects: ProcessObject[]
 }
 
@@ -28,7 +26,7 @@ interface BaseProcessObject {
 
 interface ProcessInputObject extends BaseProcessObject {
   type: "input";
-  properties: ProcessInputProperties;
+  output: ProcessInputOutput;
 }
 
 interface ProcessMathObject extends BaseProcessObject {
@@ -66,12 +64,7 @@ interface ProcessStaticObject extends BaseProcessObject {
   properties: ProcessStaticProperties;
 }
 
-interface ProcessInputProperties {
-  name: string;
-  type: string;
-  description: string;
-  mutable: boolean;
-  defaultValue: any;
-  required: boolean;
-  options?: { label: string; value: any }[];
+interface ProcessInputOutput {
+  subtype: string;
+  value: {key: string, value: string};
 }

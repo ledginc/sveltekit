@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../../app.css';
-  import { page } from '$app/state';
+  import { page } from '$app/stores';
 	let { children } = $props();
   
 </script>
@@ -19,8 +19,8 @@
       <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
       <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
         <!-- Sidebar content here -->
-        <li class={page.url.pathname === "/dashboard" ? "active" : ""}><a href="/dashboard">Tableau de bord</a></li>
-        <li class={page.url.pathname === "/quote" ? "active" : ""}><a href="/quote">Soumission</a></li>
+        <li class={$page.url.pathname === "/dashboard" ? "active" : ""}><a href="/dashboard">Tableau de bord</a></li>
+        <li class={$page.url.pathname === "/quotes" ? "active" : ""}><a href="/quotes">Soumission</a></li>
       </ul>
     </div>
   </div>
@@ -30,7 +30,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.main {
 		display: flex;
 		height: 100dvh;
@@ -40,4 +40,7 @@
 	.slot {
 		flex: 1;
 	}
+  .active {
+    background-color: lightblue;
+  }
 </style>
