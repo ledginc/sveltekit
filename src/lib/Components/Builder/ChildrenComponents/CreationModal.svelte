@@ -2,8 +2,8 @@
   import { onMount } from "svelte";
   import { createProcess } from "../index.svelte";
 
-  let processName = "";
-  let dialog: HTMLDialogElement;
+  let processName = $state("");
+  let dialog: HTMLDialogElement = $state();
 
   onMount(() => {
     dialog.showModal();
