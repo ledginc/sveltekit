@@ -10,7 +10,7 @@
   <div class="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col items-center justify-center">
-      <!-- Page content here -->
+      {@render children()}
       <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">
         Open drawer
       </label>
@@ -18,16 +18,12 @@
     <div class="drawer-side">
       <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
       <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-        <!-- Sidebar content here -->
         <li class={$page.url.pathname === "/dashboard" ? "active" : ""}><a href="/dashboard">Tableau de bord</a></li>
         <li class={$page.url.pathname === "/quotes" ? "active" : ""}><a href="/quotes">Soumission</a></li>
       </ul>
     </div>
   </div>
 
-	<div class="slot">
-		{@render children()}
-	</div>
 </div>
 
 <style lang="postcss">
@@ -36,9 +32,6 @@
 		height: 100dvh;
 		width: 100dvw;
 		position: relative;
-	}
-	.slot {
-		flex: 1;
 	}
   .active {
     background-color: lightblue;

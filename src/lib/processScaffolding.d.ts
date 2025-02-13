@@ -1,5 +1,6 @@
 export interface ProcessScaffolding {
   id: string,
+  version: number,
   name: string,
   sections: ProcessSectionScaffolding[]
 }
@@ -67,6 +68,7 @@ interface ProcessStaticObjectScaffolding extends BaseProcessObjectScaffolding {
 }
 
 interface ProcessInputPropertiesScaffolding {
+  label: string;
   subtype: string;
   description: string;
   mutable: boolean;
