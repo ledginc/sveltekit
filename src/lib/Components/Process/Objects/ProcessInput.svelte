@@ -50,6 +50,5 @@
       {:else}
         {@render input(properties.subtype)}
       {/if}
-
 </label>
 </div>

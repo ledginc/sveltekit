@@ -55,7 +55,6 @@
   </ul>
   <div class="w-auto h-auto p-6 rounded border border-base-200 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-evenly items-center gap-4">
     <h1 class="text-2xl font-bold">{sections[cursor].name}</h1>
-    <div class="m-2">
       {#each sections[cursor].objects as object}
         {#if object.type === "input"}
           <ProcessInput properties={object.properties} bind:value={object.output} requiredFault={!!objectsAtFault.find((o: any) => o.id === object.id)}/>
@@ -68,14 +67,13 @@
         {:else if object.type === "action"}
           <ProcessAction />
         {:else if object.type === "integration"}
-          <ProcessIntegration />
+          <ProcessIntegration properties={object.properties} />
         {:else if object.type === "table"}
           <ProcessTable />
         {:else if object.type === "static"}
           <ProcessStatic />
         {/if}
       {/each}
-    </div>
     <div class={"w-full flex " + (cursor === 0 ? "justify-end" : "justify-between")}>
       {#if cursor !== 0}
         <button class="btn btn-secondary" onclick={previous}>Précédent</button>

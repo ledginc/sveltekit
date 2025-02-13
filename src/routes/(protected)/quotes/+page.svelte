@@ -49,12 +49,9 @@
           id: "f1b1b1b1-1b1b-1b1b-1b1b-1b1b1b1b1b1b",
           type: "integration",
           properties: {
-            label: "Nom du batiment",
-            subtype: "gmap_street",
-            description: "Le nom du batiment pour lequel la soumission est faite.",
-            mutable: true,
-            defaultValue: "",
-            required: true
+            subtype: "gmap_streetview",
+            required: true,
+            defaultValue: {$ref: "0e0afb50-564b-4f96-bbd2-a8f9d03db0a1"}
           }
         }
       ]

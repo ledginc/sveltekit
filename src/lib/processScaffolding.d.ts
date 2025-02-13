@@ -77,3 +77,9 @@ interface ProcessInputPropertiesScaffolding {
   required: boolean;
   options?: { label: string; value: any }[];
 }
+
+interface ProcessIntegrationPropertiesScaffolding {
+  subtype: "gmap_streetview";
+  required: boolean;
+  place: string;
+}
