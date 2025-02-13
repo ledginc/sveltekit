@@ -22,7 +22,8 @@
             mutable: true,
             defaultValue: "",
             required: true
-          }
+          },
+          output: ""
         },
         {
           id: "dc3825f7-84e0-47dc-83f7-d709e6825be5",
@@ -34,7 +35,8 @@
             mutable: true,
             defaultValue: "",
             required: true
-          }
+          },
+          output: ""
         }
       ]
     },

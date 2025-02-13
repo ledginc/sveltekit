@@ -3,9 +3,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 export class Process {
   processId: string;
-  processVersion: string;
+  processVersion: number;
   transactionId: string;
-  data: ProcessObject[];
+  data: any[];
   constructor(object: ProcessScaffolding) {
     this.processId = object.id;
     this.processVersion = object.version;

@@ -30,6 +30,7 @@ interface BaseProcessObjectScaffolding {
 interface ProcessInputObjectScaffolding extends BaseProcessObjectScaffolding {
   type: "input";
   properties: ProcessInputPropertiesScaffolding;
+  output: any;
 }
 
 interface ProcessMathObjectScaffolding extends BaseProcessObjectScaffolding {
@@ -69,7 +70,7 @@ interface ProcessStaticObjectScaffolding extends BaseProcessObjectScaffolding {
 
 interface ProcessInputPropertiesScaffolding {
   label: string;
-  subtype: string;
+  subtype: "text" | "number" | "datetime" | "email" | "phone" | "money" | "percentage" | "file" | "address";
   description: string;
   mutable: boolean;
   defaultValue: any;
