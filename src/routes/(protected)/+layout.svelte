@@ -1,39 +1,19 @@
 <script lang="ts">
-	import '../../app.css';
-  import { page } from '$app/stores';
-	let { children } = $props();
-  
+    import Rightbar from "./(layout)/components/Rightbar.svelte";
+    import Sidebar from "./(layout)/components/Sidebar.svelte";
+    import Topbar from "./(layout)/components/Topbar.svelte";
+    import { adminMenuItems } from "./(layout)/helpers";
+
+    let { children } = $props();
 </script>
 
-<div class="main">
-
-  <div class="drawer lg:drawer-open">
-    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content flex flex-col items-center justify-center">
-      {@render children()}
-      <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">
-        Open drawer
-      </label>
+<div class="size-full" id="layout-main">
+    <div class="flex">
+        <Sidebar menuItems={adminMenuItems} />
+        <div class="flex h-screen min-w-0 grow flex-col overflow-auto">
+            <Topbar />
+            <div id="layout-content">{@render children()}</div>
+        </div>
     </div>
-    <div class="drawer-side">
-      <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-      <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-        <li class={$page.url.pathname === "/dashboard" ? "active" : ""}><a href="/dashboard">Tableau de bord</a></li>
-        <li class={$page.url.pathname === "/quotes" ? "active" : ""}><a href="/quotes">Soumission</a></li>
-      </ul>
-    </div>
-  </div>
-
+    <Rightbar />
 </div>
-
-<style lang="postcss">
-	.main {
-		display: flex;
-		height: 100dvh;
-		width: 100dvw;
-		position: relative;
-	}
-  .active {
-    background-color: lightblue;
-  }
-</style>

@@ -1,38 +1,81 @@
-# sv
+## Upgrading Plan
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+To upgrade your plan, send us your order ID to pouya@dasiyui.com.
+We will then provide you with a discount code so you won't have to pay the full price.
 
-## Creating a project
+# Nexus - Client & Admin Dashboard
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Package
 
-```bash
-# create a new project in the current directory
-npx sv create
+Thank you for purchasing Nexus Admin. I hope it's going to be helpful for you.
+Please share your feedback by filling out [the form](https://forms.gle/UeX3jgsjFNFcZsq9A)
 
-# create a new project in my-app
-npx sv create my-app
+### Please refer [online documentation](https://nexus.daisyui.com/docs/) for full details
+
+## How to run
+
+### Using NPM
+
+1. Install dependencies
+
+```
+npm install
 ```
 
-## Developing
+2. Run the dev server
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
+```
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+3. Or build and preview:
 
-To create a production version of your app:
-
-```bash
+```
 npm run build
+npm run preview
 ```
 
-You can preview the production build with `npm run preview`.
+### Using Yarn
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+1. Install dependencies
+
+```
+yarn
+```
+
+2. Run the dev server
+
+```
+yarn dev
+```
+
+3. Or build and preview:
+
+```
+yarn build
+yarn preview
+```
+
+### Using Bun
+
+1. Install dependencies
+
+```
+bun i
+```
+
+2. Run the dev server
+
+```
+bun run dev
+```
+
+3. Or build and preview:
+
+```
+bun run build
+bun run preview
+```
+
+Note: It is compatible with all 3 major package managers (NPM, Yarn & Bun)
+We recommended using bun for faster deps installation

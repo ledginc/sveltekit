@@ -1,9 +1,14 @@
 <script lang="ts">
-    import type { Snippet } from 'svelte';
-    import type { LayoutData } from './$types';
-    import '../app.css';
+    import ConfigProvider from "$lib/contexts/ConfigProvider.svelte";
+    import "$lib/styles/app.css";
 
-    let { data, children }: { data: LayoutData, children: Snippet } = $props();
+    let { children } = $props();
 </script>
 
-{@render children()}
+<svelte:head>
+    <title>Nexus - Admin Template</title>
+    <meta name="description" content="It's a admin & client dashboard. DaisyUI React Admin" />
+</svelte:head>
+<ConfigProvider>
+    {@render children()}
+</ConfigProvider>
