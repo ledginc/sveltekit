@@ -6,35 +6,35 @@
     <div class="card-body px-0 pb-0">
         <div class="px-6">
             <div class="flex items-center justify-between">
-                <span class="text-lg font-medium">Sale Metrics</span>
+                <span class="text-lg font-medium">Analytiques</span>
                 <span class="text-base-content/60 text-xs">2024 vs. 2025</span>
             </div>
             <div class="mt-5 grid h-full grid-cols-2 justify-between gap-6 2xl:grid-cols-3">
                 <div class="flex flex-col items-center">
                     <div class="flex items-center gap-2">
                         <span class="status status-success" />
-                        <span class="text-base-content/80 text-sm">Realtime Sales</span>
+                        <span class="text-base-content/80 text-sm">Ventes en temps réel</span>
                     </div>
                     <span class="mt-2 text-2xl font-semibold">541</span>
-                    <span class="text-base-content/60 text-xs">494 last hour</span>
+                    <span class="text-base-content/60 text-xs">494 dern. heure</span>
                 </div>
 
                 <div class="flex flex-col items-center">
                     <div class="flex items-center gap-2">
                         <span class="status status-secondary" />
-                        <span class="text-base-content/80 text-sm">Revenue</span>
+                        <span class="text-base-content/80 text-sm">Revenus</span>
                     </div>
-                    <span class="mt-2 text-2xl font-semibold">$51,474</span>
-                    <span class="text-base-content/60 text-xs">$49,162 last month</span>
+                    <span class="mt-2 text-2xl font-semibold">51,474$</span>
+                    <span class="text-base-content/60 text-xs">49,162$ dern. mois</span>
                 </div>
 
                 <div class="hidden flex-col items-center 2xl:flex">
                     <div class="flex items-center gap-2">
                         <span class="status status-error" />
-                        <span class="text-base-content/80 text-sm">Customer Retention</span>
+                        <span class="text-base-content/80 text-sm">Rétention du client</span>
                     </div>
                     <span class="mt-2 text-2xl font-semibold">3.14%</span>
-                    <span class="text-base-content/60 text-xs">2.16% last week</span>
+                    <span class="text-base-content/60 text-xs">2.16% dern. semaine</span>
                 </div>
             </div>
         </div>

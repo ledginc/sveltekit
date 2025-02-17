@@ -17,9 +17,6 @@
             dropdownClass="dropdown-center"
             dropdownContentClass="mt-2"
             iconClass="size-4.5" />
-        <label for="layout-rightbar-drawer" class="btn btn-circle btn-ghost btn-sm drawer-button">
-            <span class="iconify lucide--settings-2 size-4.5"></span>
-        </label>
         <TopbarNotificationButton />
 
         <div class="dropdown dropdown-bottom dropdown-end">
@@ -31,8 +28,8 @@
                         </div>
                     </div>
                     <div class="-space-y-0.5 text-start">
-                        <p class="text-sm">Denish</p>
-                        <p class="text-base-content/60 text-xs">Profile</p>
+                        <p class="text-sm">Bill</p>
+                        <p class="text-base-content/60 text-xs">Mon compte</p>
                     </div>
                 </div>
             </div>
@@ -41,25 +38,19 @@
                     <li>
                         <div>
                             <span class="iconify lucide--user size-4"></span>
-                            <span>My Profile</span>
+                            <span>Mon profil</span>
                         </div>
                     </li>
                     <li>
                         <div>
                             <span class="iconify lucide--settings size-4"></span>
-                            <span>Settings</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <span class="iconify lucide--arrow-left-right size-4"></span>
-                            <span>Switch Account</span>
+                            <span>Paramètres</span>
                         </div>
                     </li>
                     <li>
                         <div>
                             <span class="iconify lucide--help-circle size-4"></span>
-                            <span>Help</span>
+                            <span>Aide</span>
                         </div>
                     </li>
                 </ul>
@@ -68,7 +59,7 @@
                     <li>
                         <a class="text-error hover:bg-error/10" href="/auth/login">
                             <span class="iconify lucide--log-out size-4"></span>
-                            <span>Logout</span>
+                            <span>Se déconnecter</span>
                         </a>
                     </li>
                 </ul>

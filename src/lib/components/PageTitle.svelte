@@ -23,7 +23,7 @@
         <div class="breadcrumbs hidden p-0 text-sm sm:inline">
             <ul>
                 <li>
-                    <a href="/dashboards/ecommerce">Nexus</a>
+                    <a href="/">Protech Peinture</a>
                 </li>
                 {#each items as item, index (index)}
                     <li class={`${item.active ? "opacity-80" : ""}`}>

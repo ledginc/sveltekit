@@ -68,13 +68,7 @@
             <li>
                 <a href="#settings" class="flex items-center gap-2">
                     <span class="iconify lucide--settings-2 size-4"></span>
-                    Settings
-                </a>
-            </li>
-            <li>
-                <a href="#help" class="flex items-center gap-2">
-                    <span class="iconify lucide--circle-help size-4"></span>
-                    Get Help
+                    Paramètres d'application
                 </a>
             </li>
         </ul>
@@ -89,8 +83,8 @@
                     </div>
                 </div>
                 <div class="grow -space-y-0.5">
-                    <p class="text-sm font-medium">Denish N</p>
-                    <p class="text-base-content/60 text-xs">@withden</p>
+                    <p class="text-sm font-medium">Bill</p>
+                    <p class="text-base-content/60 text-xs">Mon compte</p>
                 </div>
                 <span class="iconify lucide--chevrons-up-down text-base-content/60 size-4"></span>
             </div>
@@ -101,32 +95,32 @@
                 <li>
                     <div>
                         <span class="iconify lucide--user size-4"></span>
-                        <span>My Profile</span>
+                        <span>Mon compte</span>
                     </div>
                 </li>
                 <li>
                     <div>
                         <span class="iconify lucide--settings size-4"></span>
-                        <span>Settings</span>
+                        <span>Paramètres du compte</span>
                     </div>
                 </li>
                 <li>
                     <div>
                         <span class="iconify lucide--bell size-4"></span>
-                        <span>Notification</span>
+                        <span>Notifications</span>
                     </div>
                 </li>
                 <li>
-                    <div>
-                        <span class="iconify lucide--arrow-left-right size-4"></span>
-                        <span>Switch Account</span>
-                    </div>
+                  <div>
+                      <span class="iconify lucide--help-circle size-4"></span>
+                      <span>Aide</span>
+                  </div>
                 </li>
                 <li>
-                    <div>
-                        <span class="iconify lucide--help-circle size-4"></span>
-                        <span>Help</span>
-                    </div>
+                      <a class="text-error hover:bg-error/10" href="/auth/login">
+                        <span class="iconify lucide--log-out size-4"></span>
+                        <span>Se déconnecter</span>
+                      </a>  
                 </li>
             </ul>
         </div>

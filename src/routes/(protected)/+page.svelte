@@ -5,12 +5,11 @@
     import PremiumCard from "./(dashboard)/components/PremiumCard.svelte";
     import QuickIntegrationCard from "./(dashboard)/components/QuickIntegrationCard.svelte";
     import SalesMetricCard from "./(dashboard)/components/SalesMetricCard.svelte";
-    import SocialAcquisitionCard from "./(dashboard)/components/SocialAcquisitionCard.svelte";
     import StatList from "./(dashboard)/components/StatList.svelte";
 </script>
 
 <div>
-    <PageTitle title="CRM Overview" items={[{ label: "Dashboards" }, { label: "CRM", active: true }]} />
+    <PageTitle title="Protech Peinture - Tableau de bord " items={[{ label: "Tableau de bord", active: true }]} />
     <div class="mt-6">
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-12 md:col-span-4 xl:col-span-2">
@@ -28,18 +27,6 @@
                         <GoalStatusCard />
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-2 2xl:grid-cols-3">
-            <div class="col-span-1">
-                <SocialAcquisitionCard />
-            </div>
-            <div class="col-span-1">
-                <CustomerDealsCard />
-            </div>
-
-            <div class="col-span-1">
-                <QuickIntegrationCard />
             </div>
         </div>
     </div>

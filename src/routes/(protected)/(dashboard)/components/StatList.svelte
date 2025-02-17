@@ -3,19 +3,19 @@
 
     const statItems: IStatItem[] = [
         {
-            title: "Customers",
+            title: "Clients",
             amount: "4,235",
-            percent: 8.04,
+            percent: -8.04,
             icon: "lucide--users",
         },
         {
-            title: "Revenue",
+            title: "Revenus",
             amount: "$75,400",
             percent: 15.3,
             icon: "lucide--dollar-sign",
         },
         {
-            title: "Closed Deals",
+            title: "Jobs signées",
             amount: "574",
             percent: -2.4,
             icon: "lucide--handshake",

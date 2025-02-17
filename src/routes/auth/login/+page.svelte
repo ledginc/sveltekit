@@ -1,8 +1,18 @@
-<script>
+<script lang="ts">
+    import { goto } from "$app/navigation";
     import Logo from "$lib/components/Logo.svelte";
     import ThemeToggleDropdown from "$lib/components/ThemeToggleDropdown.svelte";
 
     let showPassword = $state(false);
+
+    let email: string = $state("");
+    let password: string = $state("");
+
+    function logIn() {
+      // email et password sont updatés en temps réel fack tu peux les utiliser ici
+
+      goto('/');
+    }
     
 </script>
 
@@ -22,7 +32,7 @@
             <legend class="fieldset-legend">Adresse courriel</legend>
             <label class="input w-full focus:outline-0">
                 <span class="iconify lucide--mail text-base-content/80 size-5"></span>
-                <input class="grow focus:outline-0" placeholder="jean@tremblay.ca" type="email" />
+                <input class="grow focus:outline-0" placeholder="jean@tremblay.ca" type="email" bind:value={email}/>
             </label>
         </fieldset>
 
@@ -30,7 +40,7 @@
             <legend class="fieldset-legend">Mot de passe</legend>
             <label class="input w-full focus:outline-0">
                 <span class="iconify lucide--key-round text-base-content/80 size-5"></span>
-                <input class="grow focus:outline-0" placeholder="Superb0nMotd3P4sse!" type={showPassword ? "text" : "password"} />
+                <input class="grow focus:outline-0" placeholder="Superb0nMotd3P4sse!" type={showPassword ? "text" : "password"} bind:value={password} />
                 <button
                     aria-label="Password"
                     class="btn btn-xs btn-ghost btn-circle"
@@ -59,7 +69,7 @@
             </label>
         </div>
 
-        <a class="btn btn-primary btn-wide mt-4 max-w-full gap-3 md:mt-6" href="/dashboards/ecommerce">
+        <a class="btn btn-primary btn-wide mt-4 max-w-full gap-3 md:mt-6" onclick={logIn}>
             <span class="iconify lucide--log-in size-4"></span>
             Se connecter
         </a>

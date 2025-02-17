@@ -1,7 +1,7 @@
 <div class="card bg-base-100 shadow">
     <div class="card-body">
-        <p class="text-base-content/60 text-xs italic">Upgrade to premium</p>
-        <p class="mt-1 leading-tight">Make the better business analytics with Premium Dashboard</p>
+        <p class="text-base-content/60 text-xs italic">Voir comment votre entreprise pourraît croître</p>
+        <p class="mt-1 leading-tight">Utiliser la (bonne) intelligence artificielle pour voir des patterns qui pourraient vous échapper.</p>
         <div class="mt-2 flex items-end justify-between">
             <div class="avatar-group -space-x-3.5">
                 <div class="avatar">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-sm btn-outline">Pay Monthly $29</button>
+            <button class="btn btn-sm btn-outline">5000$ par mois</button>
         </div>
     </div>
 </div>

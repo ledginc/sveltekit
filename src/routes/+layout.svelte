@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-    <title>Nexus - Admin Template</title>
+    <title>Planifix - Tableau de bord</title>
     <meta name="description" content="It's a admin & client dashboard. DaisyUI React Admin" />
 </svelte:head>
 <ConfigProvider>
