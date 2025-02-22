@@ -1,5 +1,7 @@
 <script lang="ts">
     let { children } = $props();
+
+    
 </script>
 
 <div class="grid grid-cols-12 overflow-auto sm:h-screen">
