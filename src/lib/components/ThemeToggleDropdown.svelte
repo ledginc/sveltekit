@@ -33,19 +33,19 @@
         <li>
             <div class="group-data-[theme=light]/html:bg-base-200 flex gap-2" onclick={() => changeTheme("light")}>
                 <span class="iconify lucide--sun size-4.5"></span>
-                <span class="font-medium">Light</span>
+                <span class="font-medium">Clair</span>
             </div>
         </li>
         <li>
             <div class="group-data-[theme=dark]/html:bg-base-200 flex gap-2" onclick={() => changeTheme("dark")}>
                 <span class="iconify lucide--moon size-4.5"></span>
-                <span class="font-medium">Dark</span>
+                <span class="font-medium">Sombre</span>
             </div>
         </li>
         <li>
             <div class="group-[:not([data-theme])]/html:bg-base-200 flex gap-2" onclick={() => changeTheme("system")}>
                 <span class="iconify lucide--monitor size-4.5"></span>
-                <span class="font-medium">System</span>
+                <span class="font-medium">Système</span>
             </div>
         </li>
     </ul>

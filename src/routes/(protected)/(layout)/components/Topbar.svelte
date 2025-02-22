@@ -18,52 +18,5 @@
             dropdownContentClass="mt-2"
             iconClass="size-4.5" />
         <TopbarNotificationButton />
-
-        <div class="dropdown dropdown-bottom dropdown-end">
-            <div tabIndex={0} role="button" class="btn btn-ghost rounded-btn px-1.5">
-                <div class="flex items-center gap-2">
-                    <div class="avatar">
-                        <div class="bg-base-200 mask mask-squircle w-8">
-                            <img src="/images/avatars/1.png" alt="Avatar" />
-                        </div>
-                    </div>
-                    <div class="-space-y-0.5 text-start">
-                        <p class="text-sm">Bill</p>
-                        <p class="text-base-content/60 text-xs">Mon compte</p>
-                    </div>
-                </div>
-            </div>
-            <div tabIndex={0} class="dropdown-content bg-base-100 rounded-box mt-4 w-44 shadow">
-                <ul class="menu w-full p-2">
-                    <li>
-                        <div>
-                            <span class="iconify lucide--user size-4"></span>
-                            <span>Mon profil</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <span class="iconify lucide--settings size-4"></span>
-                            <span>Paramètres</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <span class="iconify lucide--help-circle size-4"></span>
-                            <span>Aide</span>
-                        </div>
-                    </li>
-                </ul>
-                <hr class="border-base-300" />
-                <ul class="menu w-full p-2">
-                    <li>
-                        <a class="text-error hover:bg-error/10" href="/auth/login">
-                            <span class="iconify lucide--log-out size-4"></span>
-                            <span>Se déconnecter</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
 </div>

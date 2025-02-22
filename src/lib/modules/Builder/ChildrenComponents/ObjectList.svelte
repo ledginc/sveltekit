@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BuilderObjects, type BuilderCardObject, type BuilderObjectsList, } from '$lib/constants/BuilderCardObjects';
+  import { BuilderObjects, type BuilderCardObject, type BuilderObjectsList, } from '$lib/modules/Builder/';
   import { onMount } from 'svelte';
 
   const listObjects: BuilderObjectsList = BuilderObjects;

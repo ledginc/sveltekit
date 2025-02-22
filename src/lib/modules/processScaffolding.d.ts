@@ -2,7 +2,8 @@ export interface ProcessScaffolding {
   id: string,
   version: number,
   name: string,
-  sections: ProcessSectionScaffolding[]
+  sections: ProcessSectionScaffolding[],
+  outputs: Map<string, any>
 }
 
 interface ProcessSectionScaffolding {

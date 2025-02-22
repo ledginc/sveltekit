@@ -5,13 +5,25 @@
 
     let showPassword = $state(false);
 
-    let email: string = $state("");
-    let password: string = $state("");
+    let email: string = $state("nate");
+    let password: string = $state("penis");
 
     function logIn() {
-      // email et password sont updatés en temps réel fack tu peux les utiliser ici
+      const formData = new FormData();
+      formData.append('username', email);
+      formData.append('password', password);
 
-      goto('/');
+      fetch('https://dev.diongilbert.com:4000/login/credentials', {
+        method: 'POST',
+        body: formData
+      }).then((response) => {
+        return response.json(); // Return the promise from response.json()
+      }).then((data) => {
+        console.log(data); // Log the resolved data
+        goto('/');
+      }).catch((error) => {
+        console.error(error);
+      });
     }
     
 </script>
